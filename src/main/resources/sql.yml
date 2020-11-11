@@ -1,0 +1,21 @@
+#系统中用的原生sql
+nativesql:
+  sqls:
+    #查询超过N天的数据
+    SysMonitor.findDate: |
+      SELECT
+      	id,
+      	operat_system,
+      	total_memory,
+      	used_memory,
+      	left_memory,
+      	process_num,
+      	cpu_used,
+      	cpu_freed,
+      	disk,
+      	create_date,
+      	create_time
+      FROM
+      	sys_monitor
+      WHERE
+      	DATEDIFF( curdate( ), create_date ) > :sittingdate

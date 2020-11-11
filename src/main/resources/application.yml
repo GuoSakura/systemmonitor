@@ -1,0 +1,19 @@
+spring:
+  profiles:
+    #默认启用开发环境配置
+    active: dev
+  #jpa配置
+  jpa:
+    show-sql: true
+    #自动创建表结构
+    generate-ddl: false
+    database-platform: org.hibernate.dialect.MySQLDialect
+
+timer:
+  systemmonitortime: "0 0/5 * * * ?"
+  systemmonitortimecron: "0 0 12 * * ?"
+
+#清空超过多少天的数据
+settingdate: 3
+
+
